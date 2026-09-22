@@ -1,0 +1,10 @@
+{
+  "name": "my-look",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MY LOOK — Claude 아티팩트 전용 개인 옷장 코디 추천 웹앱. 빌드 도구나 npm 패키지 의존성이 없는 순수 HTML/CSS/JS 프로젝트입니다.",
+  "main": "index.html",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}

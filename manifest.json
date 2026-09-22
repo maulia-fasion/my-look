@@ -1,0 +1,14 @@
+{
+  "name": "MY LOOK",
+  "short_name": "MY LOOK",
+  "description": "날씨와 내 옷장을 연결하는 개인 코디 추천 앱",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#151515",
+  "theme_color": "#151515",
+  "lang": "ko",
+  "icons": [
+    {"src":"icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

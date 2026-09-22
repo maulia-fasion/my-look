@@ -1,0 +1,83 @@
+:root{
+    --bg:#faf9f6; --surface:#ffffff; --ink:#151515; --sub:#7a7a7a; --line:#e2e0da;
+    --accent:#151515; --accent-ink:#ffffff; --danger:#c0392b; --shadow:0 2px 14px rgba(0,0,0,.06);
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#121212; --surface:#1c1c1c; --ink:#f2f0ec; --sub:#9a9a9a; --line:#2e2e2e;
+      --accent:#f2f0ec; --accent-ink:#151515; --danger:#e07a63; --shadow:0 2px 14px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#121212; --surface:#1c1c1c; --ink:#f2f0ec; --sub:#9a9a9a; --line:#2e2e2e;
+    --accent:#f2f0ec; --accent-ink:#151515; --danger:#e07a63; --shadow:0 2px 14px rgba(0,0,0,.5);
+  }
+  *{box-sizing:border-box}
+  html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{margin:0; min-height:100%; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+  button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
+  #shell{max-width:520px;margin:0 auto;min-height:100vh;background:var(--bg)}
+  header{height:60px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;
+    background:var(--bg);position:sticky;top:env(safe-area-inset-top,0px);z-index:3}
+  .brand{font-size:17px;letter-spacing:3px;font-weight:700}
+  .icon-btn{font-size:18px;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .icon-btn:active{background:var(--line)}
+  .tabs{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);
+    height:64px;padding-bottom:env(safe-area-inset-bottom,0px);
+    background:var(--surface);border-top:1px solid var(--line);display:flex;z-index:4}
+  .tabs button{flex:1;font-size:12px;color:var(--sub)}
+  .tabs button.active{color:var(--ink);font-weight:700}
+  .tabs button.active:before{content:"•";display:block;font-size:14px;line-height:10px}
+  .page{padding:20px 20px 110px}
+  .eyebrow{font-size:11px;letter-spacing:2px;color:var(--sub);text-transform:uppercase}
+  .hero h1{font-size:32px;line-height:1.15;margin:8px 0 18px;font-weight:700}
+  .primary{background:var(--accent);color:var(--accent-ink);border-radius:14px;padding:15px 18px;font-weight:700;width:100%}
+  .secondary{border:1px solid var(--line);border-radius:12px;padding:12px 16px;background:var(--surface)}
+  .danger-btn{color:var(--danger)}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+  .card{background:var(--surface);border-radius:18px;padding:16px;min-height:104px;box-shadow:var(--shadow)}
+  .stat{font-size:26px;font-weight:700;margin-top:8px}
+  .section{margin-top:26px}
+  .section h2{font-size:18px;margin:0 0 12px}
+  .look{background:var(--surface);border-radius:20px;padding:14px;margin-bottom:12px;box-shadow:var(--shadow)}
+  .look-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .piece{aspect-ratio:1;border-radius:12px;background:var(--line);overflow:hidden}
+  .piece img{width:100%;height:100%;object-fit:cover;display:block}
+  .meta{font-size:12px;color:var(--sub);margin-top:10px}
+  .closet-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .cloth{background:var(--surface);border-radius:18px;overflow:hidden;text-align:left;padding:0}
+  .cloth-img{aspect-ratio:1;background:var(--line)}
+  .cloth-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .cloth-info{padding:11px}
+  .cloth-info b{font-size:13px;display:block;font-weight:600}
+  .cloth-info small{display:block;color:var(--sub);margin-top:4px}
+  .fab{position:fixed;right:max(20px,calc((100% - 480px)/2));
+    bottom:calc(84px + env(safe-area-inset-bottom,0px));width:54px;height:54px;border-radius:50%;
+    background:var(--accent);color:var(--accent-ink);font-size:26px;box-shadow:0 6px 20px rgba(0,0,0,.25);z-index:5}
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10;display:flex;align-items:flex-end}
+  .sheet{background:var(--surface);width:min(520px,100%);margin:auto;border-radius:24px 24px 0 0;
+    padding:22px;padding-bottom:calc(22px + env(safe-area-inset-bottom,0px));max-height:85vh;overflow:auto}
+  .sheet h2{margin-top:0}
+  .row{display:flex;gap:10px}
+  .row>*{flex:1}
+  .field{margin:10px 0}
+  .field label{display:block;font-size:12px;color:var(--sub);margin-bottom:6px}
+  .field input,.field select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;
+    background:var(--bg);color:var(--ink)}
+  .preview{width:100%;max-height:260px;object-fit:contain;border-radius:16px;background:var(--line);margin:8px 0}
+  .ai-hint{font-size:12px;color:var(--sub);background:var(--bg);border:1px dashed var(--line);border-radius:10px;padding:9px 11px;margin:4px 0 12px}
+  .chip-row{display:flex;gap:8px;overflow-x:auto;margin:0 0 14px;padding-bottom:2px}
+  .chip{flex:0 0 auto;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:13px;color:var(--sub);white-space:nowrap}
+  .chip-active{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+  .temp-row{display:flex;align-items:center;gap:14px;margin-top:2px}
+  .temp-row .secondary{width:44px;padding:10px 0;text-align:center;font-weight:700}
+  .temp-val{flex:1;text-align:center;font-weight:700;font-size:15px}
+  .empty{text-align:center;padding:46px 15px;color:var(--sub)}
+  .shopbox{border:1px dashed var(--line);border-radius:20px;padding:30px 20px;text-align:center;background:var(--surface)}
+  .loading{text-align:center;padding:80px 20px;color:var(--sub)}
+  .usage-bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:8px}
+  .usage-fill{height:100%;background:var(--accent)}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#151515">
+<meta name="description" content="날씨와 내 옷장을 연결하는 개인 코디 추천 앱 MY LOOK">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+<title>MY LOOK</title>
+</head>
+<body>
+<div id="shell">
+  <header><div class="brand">MY LOOK</div><button class="icon-btn" id="settingsBtn" aria-label="설정">⚙</button></header>
+  <main id="main"><div class="loading">MY LOOK을 준비하는 중…</div></main>
+  <nav class="tabs">
+    <button data-tab="home">홈</button><button data-tab="closet">내 옷장</button><button data-tab="outfit">코디</button><button data-tab="shop">쇼핑</button>
+  </nav>
+</div>
+<input id="cameraInput" type="file" accept="image/*" capture="environment" hidden>
+<input id="galleryInput" type="file" accept="image/*" hidden>
+<script src="storage.js"></script>
+<script src="weather.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
